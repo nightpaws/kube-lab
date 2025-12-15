@@ -1,0 +1,7 @@
+# Get Kube pod config in yaml
+kubectl get pod nginx-night -o yaml
+
+# edit a pod config
+kubectl edit pod nginx-night
+
+#
