@@ -21,3 +21,6 @@ kubectl get namespaces
 kubectl config current-context
 kubectl config set-context <target_context>
 kubectl config set-context --current --namespace=<target_context>
+
+# Forward a port for testing on the host
+k port-forward <pod or port> 9000
