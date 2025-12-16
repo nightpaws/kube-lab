@@ -1,7 +1,23 @@
+#####################################
+# Personal Quick Reference Commands #
+#####################################
+
 # Get Kube pod config in yaml
 kubectl get pod nginx-night -o yaml
+
+# just get all pods in a given context
+kubectl get pods -n <context_of_pod>
 
 # edit a pod config
 kubectl edit pod nginx-night
 
-#
+# get Deployments
+kubectl get deployments
+
+# Get kube namespaces
+kubectl get namespaces
+
+# Context management for working in different namespaces
+kubectl config current-context
+kubectl config set-context <target_context>
+kubectl config set-context --current --namespace=<target_context>
