@@ -8,6 +8,9 @@ kubectl get pod nginx-night -o yaml
 # just get all pods in a given context
 kubectl get pods -n <context_of_pod>
 
+# Get all Pods from anywhere
+kubectl get pods -A
+
 # edit a pod config
 kubectl edit pod nginx-night
 
@@ -24,3 +27,26 @@ kubectl config set-context --current --namespace=<target_context>
 
 # Forward a port for testing on the host
 k port-forward <pod or port> 9000
+
+# get services (e.g. port forwarding)
+kubectl get services
+kubectl get svc
+
+# Generate YAML for a service or for exploring network config
+kubectl expose deployment <deployment_name> --port 8080
+
+# Drop into shell on a pod in a container
+kubectl exec -it container_name -c pod -- bash
+
+#####################################
+# Helm Commands
+#####################################
+
+# Show deployed Helm charts
+helm ls -A
+
+# Show helm repos
+helm repo list
+
+# Show the values for the helm chart. Useful to pipe out to work with
+helm show values chartrepo/chart
